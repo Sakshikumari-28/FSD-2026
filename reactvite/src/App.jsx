@@ -7,16 +7,15 @@ import ICard from './component/ICard'
 import ICardGallery from './component/ICardGallery'
 import ImdbCard from './component/ImdbCard'
 import StateHandling from './component/StateHandling'
+import Imagemanipulation from './component/Imagemanipulation'
 
 function App() {
-  
-
   return (
     <div>
-    
-       {/* <ICardGallery /> */}
-       {/* <ImdbCard /> */}
-     <StateHandling />
+      {/* <ICardGallery /> */}
+      {/* <ImdbCard /> */}
+      {/* <StateHandling /> */}
+      <Imagemanipulation />
     </div>
   )
 }
