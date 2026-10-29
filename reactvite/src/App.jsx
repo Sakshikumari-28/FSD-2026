@@ -1,31 +1,38 @@
-import { useState } from 'react';
-import heroImg from './assets/hero.png';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
-import './App.css';
 
-import ICard from './component/ICard';
-import ICardGallery from './component/ICardGallery';
-import ImdbCard from './component/ImdbCard';
-import StateHandling from './component/StateHandling';
-import Imagemanipulation from './component/Imagemanipulation';
-import SampleuseEffect from './component/SampleuseEffect';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './component/Home';
+import Registration from './component/Registration';
+import Login from './component/Login';
 import Shopping from './component/Shopping';
 
 function App() {
-return ( <div>
-{/* <ICard /> */}
-{/* <ICardGallery /> */}
-{/* <ImdbCard /> */}
-{/* <StateHandling /> */}
-{/* <Imagemanipulation /> */}
-{/* <SampleuseEffect /> */}
+    const [rdata, setRData] = useState([]);
 
-        <Shopping />
-    </div>
-);
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
 
+                <Route
+                    path="/registration"
+                    element={<Registration regData={setRData} />}
+                />
 
+                <Route
+                    path="/login"
+                    element={<Login logdata={rdata} />}
+                />
+
+                <Route
+                    path="/shopping"
+                    element={<Shopping />}
+                />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
+
